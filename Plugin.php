@@ -211,14 +211,14 @@ class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
             'subject' => $title,
             'html' => $body,
             );
-        $url = 'https://api.mailgun.net/v3/'.$domain.'/messages';
-        $ch = curl_init();
+        $url = 'https://api.hedwi.com/mail/'.$domain;
+        $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_USERPWD,'api:'.$api_key);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt($ch, CURLOPT_HEADER, true);
         self::_log('curl prepareing...'.print_r(curl_getinfo($ch),1),'debug');

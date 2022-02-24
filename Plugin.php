@@ -65,7 +65,7 @@ class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
                     '));
         $form->addInput($other->multiMode());
         $key = new Typecho_Widget_Helper_Form_Element_Text('key', NULL, 'xxxxxxxxxxxxxxxxxxx-xxxxxx-xxxxxx',
-                _t('MailGun API 密钥'), _t('请填写在<a href="https://mailgun.com/"> MailGun </a>申请的密钥，可在<a href="https://app.mailgun.com/app/account/security/api_keys">个人页</a>中查看 '));
+                _t('MailGun API 密钥'), _t('请填写在<a href="https://send.hedwi.com/"> Hedwi </a>申请的密钥'));
         $form->addInput($key->addRule('required', _t('密钥不能为空')));
         $domain = new Typecho_Widget_Helper_Form_Element_Text('domain', NULL, 'samples.mailgun.org',
                 _t('MailGun 域名'), _t('请填写您的邮件域名，若使用官方提供的测试域名可能存在其他问题'));

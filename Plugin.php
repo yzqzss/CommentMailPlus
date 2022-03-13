@@ -3,9 +3,9 @@
  * 评论回复通过 MailGun 发送邮件提醒
  *
  * @package CommentMailPlus
- * @author oott123
+ * @author oott123, yzqzss
  * @version 0.0.4
- * @link http://oott123.com
+ * @link http://oott123.com, https://github.com/yzqzss/CommentMailPlus
  */
 class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
     /**

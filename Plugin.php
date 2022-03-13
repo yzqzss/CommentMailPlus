@@ -5,7 +5,7 @@
  * @package CommentMailPlus
  * @author oott123, yzqzss
  * @version 0.0.4
- * @link http://oott123.com, https://github.com/yzqzss/CommentMailPlus
+ * @link https://github.com/yzqzss/CommentMailPlus
  */
 class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
     /**

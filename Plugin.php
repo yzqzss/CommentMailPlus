@@ -1,6 +1,6 @@
 <?php
 /**
- * 评论回复通过 MailGun 发送邮件提醒
+ * 评论回复通过 Hedwi 发送邮件提醒
  *
  * @package CommentMailPlus
  * @author oott123, yzqzss
@@ -21,7 +21,7 @@ class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
         }
         Helper::addAction('comment-mail-plus', 'CommentMailPlus_Action');
         Typecho_Plugin::factory('Widget_Feedback')->finishComment = array('CommentMailPlus_Plugin', 'toMail');
-        return _t('请到设置面板正确配置 MailGun 才可正常工作。');
+        return _t('请到设置面板正确配置 Hedwi 才可正常工作。');
     }
 
     /**
@@ -65,10 +65,10 @@ class CommentMailPlus_Plugin implements Typecho_Plugin_Interface {
                     '));
         $form->addInput($other->multiMode());
         $key = new Typecho_Widget_Helper_Form_Element_Text('key', NULL, 'xxxxxxxxxxxxxxxxxxx-xxxxxx-xxxxxx',
-                _t('MailGun API 密钥'), _t('请填写在<a href="https://send.hedwi.com/"> Hedwi </a>申请的密钥'));
+                _t('Hedwi API 密钥'), _t('请填写在<a href="https://send.hedwi.com/"> Hedwi </a>申请的密钥'));
         $form->addInput($key->addRule('required', _t('密钥不能为空')));
         $domain = new Typecho_Widget_Helper_Form_Element_Text('domain', NULL, 'samples.mailgun.org',
-                _t('MailGun 域名'), _t('请填写您的邮件域名，若使用官方提供的测试域名可能存在其他问题'));
+                _t('Hedwi 域名'), _t('请填写您的邮件域名。'));
         $form->addInput($domain->addRule('required', _t('邮件域名不能为空')));
         $mailAddress = new Typecho_Widget_Helper_Form_Element_Text('mailAddress', NULL, 'no-reply@samples.mailgun.org',
                 _t('发件人邮箱'));
